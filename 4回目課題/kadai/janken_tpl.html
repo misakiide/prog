@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー<img src ="gu.png" width =150px></li>
+    <li id="cho_btn">チョキ<img src ="tyoki.png" width =150px></li>
+    <li id="par_btn">パー<img src ="par.png" width =150px></li>
+  </ul>
+  <div id ="cd">コンピュータの出した手は...<span id="pc_hands"></span></div>
+  
+  <div id="judgment"></div>
+  
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+//グー ＝1、チョキ ＝2、パー ＝3
+let u_num;
+let c_num;
+$("#gu_btn").on("click",function(){
+  u_num = 1;
+  c_num = Math.ceil(Math.random()*3);
+  computer();
+  if(c_num == 1){
+    $("#judgment").html("あいこです");
+  }
+  if(c_num == 2){
+    $("#judgment").html("あなたの勝ちです！");
+  }
+  if(c_num == 3){
+    $("#judgment").html("あなたの負けです！");
+  }
+});
+$("#cho_btn").on("click",function(){
+  u_num = 2;
+  c_num = Math.ceil(Math.random()*3);
+  computer();
+  if(c_num == 1){
+    $("#judgment").html("あなたの負けです！");
+  }
+  if(c_num == 2){
+    $("#judgment").html("あいこです");
+  }
+  if(c_num == 3){
+    $("#judgment").html("あなたの勝ちです！");
+  }
+});
+$("#par_btn").on("click",function(){
+  u_num = 3;
+  c_num = Math.ceil(Math.random()*3);
+  computer();
+  if(c_num == 1){
+    $("#judgment").html("あなたの勝ちです！");
+  }
+  if(c_num == 2){
+    $("#judgment").html("あなたの負けです！");
+  }
+  if(c_num == 3){
+    $("#judgment").html("あいこです");
+  }
+});
+
+function computer(){
+if(c_num == 1){
+$("#pc_hands").html('「グー<img src ="gu.png" width =50px>」');
+}
+if(c_num == 2){
+  $("#pc_hands").html('「チョキ<img src ="tyoki.png" width =50px>」');
+}
+if(c_num == 3){
+  $("#pc_hands").html('「パー<img src ="par.png" width =50px>」');
+}
+}
+    
+    
+    
+    
+    
+    
+    
+
+</script>
+</body>
+</html>

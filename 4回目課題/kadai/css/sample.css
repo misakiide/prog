@@ -1,0 +1,89 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+    background-color: rgba(240,240,240);
+}
+header{
+ 
+    text-align: center;
+}
+main{
+    
+}
+footer{
+    background-color: #fff;
+   
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+#more{
+   
+}
+
+h1{
+    font-size:30px;
+
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    margin: 70px;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: rgb(219, 236, 253);
+    color:#fff;
+}
+
+#cd{
+    text-align:center;
+}
+#judgment{
+    text-align:center;
+    color:#0000ff;
+    
+}
+
+#gu_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;}
+
+  #cho_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;}
+
+  #par_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;}
