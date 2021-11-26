@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-2.1.3.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "sum"></h1>
+    <script>
+        //関数群
+        function tasu(a,b){
+            const t = a+b;
+            return t;
+        }
+
+        function hiku(a,b){
+            const h = a-b;
+            return h;
+        }
+
+        function waru(a,b){
+            const w = a/b;
+            return w;
+        }
+
+        function kakeru(a,b){
+            const k = a*b;
+            return k;
+        }
+        //実行群
+        let a,b,c,d,e;
+
+        e =(a = tasu(10,3))+(b = hiku(-10,5))+(c = waru(1,7))+(d = kakeru(10,-2));
+        //console.log(e);
+        $("#sum").html(e);
+    </script>
+</body>
+</html>
