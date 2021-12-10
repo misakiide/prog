@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>クイズ練習（複数）</title>
+</head>
+<body>
+
+<header>
+    <h1>クイズ1問目</h1>
+    <h2></h2>
+</header>
+
+<main>
+  <p id="quest">ここに問題が出題されます</p>
+  <p>
+    <input type="radio" name="toi" value="1"><span id="toi1">選択肢１</span>
+    <input type="radio" name="toi" value="2"><span id="toi2">選択肢２</span>
+    <input type="radio" name="toi" value="3"><span id="toi3">選択肢３</span>
+  </p>
+</main>
+
+<footer></footer>
+<script>
+//ここから記述領域［START］
+
+  //以下に配列を記述してください。
+  //問題文[配列]
+const qs = [
+"通るときには閉まって、通らないときには開いているものは何？",
+"話すことがとても好きな道具は何？",
+"世界の真ん中にいる虫は何？",
+"凶暴なサメは次のうち、どれでしょうか？",
+"タラバガニはなんの仲間でしょうか？",
+"イルカは眠る時、どのようにして寝るでしょうか？"
+];
+    
+  //回答選択肢[多重配列]
+const toi = [
+["踏み切り","洗濯機","冷蔵庫"],
+["スプーン","シャベル","しゃもじ"],
+["てんとう虫","カマキリ","蚊"],
+["ネコザメ","イタチザメ","トラザメ"],
+["カニ","エビ","ヤドカリ"],
+["片目だけ閉じて寝る","目を開けたまま寝る","砂の中に潜って寝る"]
+];
+
+    
+  //答え[配列]
+const ans = [1,2,3,2,3,1];
+
+
+
+  //1.最初の問題文＆回答選択肢＆回答値を設定
+let i =0;
+let t=0;
+let f=0;
+const a ="終了です。";
+let s;
+
+$("#quest").text(qs[i]);
+$("#toi1").text(toi[i][0]);
+$("#toi2").text(toi[i][1]);
+$("#toi3").text(toi[i][2]);
+
+  //2.ラジオボタンをクリックしたらイベント発生！(クリックイベント)
+$("[name = toi]").on("click",function(){
+  let v = $(this).val();
+  if(ans[i] == v && i<=6){
+    if(i!=6){
+    $("h2").text((i+1)+"問目正解！")
+    
+    s ="正解!";
+    }
+    t++;
+  }else{
+    if(i!=6){
+    $("h2").text((i+1)+"問目不正解")
+    
+    s ="不正解";
+    }
+    f++;
+  }
+  //alert(t);
+
+  if(i<6){
+    i++;
+    if(i!=6){
+      $("h1").text("クイズ"+(i+1)+"問目")
+    }
+  }
+  
+  if(i==6){
+    alert("6問目"+s);
+    alert(a+"\n\n6問中 『"+t+"問』 正解！\n\n正答率： "+Math.floor(t/6*100)+"%");
+  }
+  //$("h1").text("クイズ"+(i+1)+"問目")
+  $("#quest").text(qs[i]);
+  $("#toi1").text(toi[i][0]);
+  $("#toi2").text(toi[i][1]);
+  $("#toi3").text(toi[i][2]);
+});
+
+
+
+
+
+
+//ここまでが記述領域［END］
+</script>
+</body>
+</html>
